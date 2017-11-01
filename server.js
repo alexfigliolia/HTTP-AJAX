@@ -53,6 +53,7 @@ app.put('/update-friend', (req, res) => {
 
 app.delete('/delete-friend', (req, res) => {
 	const index = req.body.index;
+	console.log(index);
 	friends.splice(index, 1);
 	res.send(friends);
 });
