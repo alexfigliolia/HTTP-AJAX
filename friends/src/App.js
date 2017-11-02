@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getFriends, deleteFriend, updateFriend } from './actions';
+import Header from './Header';
 import Friend from './Friend';
 import './App.css';
 
@@ -12,8 +13,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <div className="friends">
-          <div>
+          <div className="center">
             {
               this.props.friends.map((friend, i) => {
                 return (

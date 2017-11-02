@@ -8,15 +8,58 @@
   width: 100%;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 200px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  z-index: 10;
+}
+
+.header>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 400px;
+  width: 90%;
+}
+
+.header input {
+  width: 90%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ED86A7;
+  margin: 10px;
+}
+
+.header button {
+  margin-top: 10px;
+  background: #fff;
+  color: #ED86A7;
+  border: 2px solid #ED86A7;
+  border-radius: 5px;
+  height: 40px;
+  width: 120px;
+}
+
 .friends {
   width: 100%;
 /*   max-width: 500px; */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 200px;
 }
 
-.friends>div {
+.friends>.center {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -40,12 +83,8 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   overflow:  hidden;
 }
-
-.friend>div{
-  padding: 20px;
-}
-.friend>div>h2,
-.friend>div>p {
+.friend>.center>h2,
+.friend>.center>p {
   margin:10px;
 }
 
@@ -96,11 +135,16 @@
 
 .edit>div {
   height: 100%;
-  width:  90%;
+  width:  100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction:  column;
+}
+
+.edit>div>h2 {
+  color: #ED86A7;
+  margin: 0;
 }
 
 .edit>div>input {

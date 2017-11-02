@@ -46,6 +46,7 @@ app.post('/new-friend', (req, res) => {
 });
 
 app.put('/update-friend', (req, res) => {
+	console.log(req.body);
 	const index = req.body.index;
 	friends[index] = req.body.update;
 	res.send(friends);
@@ -53,7 +54,6 @@ app.put('/update-friend', (req, res) => {
 
 app.delete('/delete-friend', (req, res) => {
 	const index = req.body.index;
-	console.log(index);
 	friends.splice(index, 1);
 	res.send(friends);
 });

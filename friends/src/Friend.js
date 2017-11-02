@@ -14,27 +14,23 @@ class Friend extends Component {
     e.target.parentNode.parentNode.parentNode.classList.remove('edit-show');
   }
 
-  saveUpdate = () => {
+  saveUpdate = (e) => {
     const name = this.refs.name.value === '' ? this.refs.name.placeholder : this.refs.name.value;
     const email = this.refs.email.value === '' ? this.refs.email.placeholder : this.refs.email.value;
     const age = this.refs.age.value === '' ? this.refs.age.placeholder : this.refs.age.value;
-    const friend = {
-      name: name,
-      email: email,
-      age: age
-    }
+    const friend = { name: name, email: email, age: age };
     this.props.updateFriend(this.props.index, friend);
     this.refs.name.value = '';
     this.refs.email.value = '';
     this.refs.age.value = ''; 
+    e.target.parentNode.parentNode.parentNode.classList.remove('edit-show');
   }
 
   render() {
-  	console.log(this.props)
     return (
       <div 
         className="friend">
-        <div>
+        <div className="center">
           <h2>{this.props.name}</h2>
           <p>Age: {this.props.age}</p>
           <p>Email: {this.props.email}</p>
@@ -47,6 +43,7 @@ class Friend extends Component {
           data-index={this.props.index}></button>
         <div className="edit">
           <div>
+            <h2>Edit {this.props.name}</h2>
             <input ref="name" type="text" placeholder={this.props.name} />
             <input ref="age" type="number" placeholder={this.props.age} />
             <input ref="email" type="email" placeholder={this.props.email} />

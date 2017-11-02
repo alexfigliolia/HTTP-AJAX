@@ -29,7 +29,7 @@ export const postFriend = (friend) => {
 
 export const updateFriend = (index, friend) => {
     const friendsEndpoint = 'http://localhost:5000/update-friend';
-		const friends = axios.put(friendsEndpoint, {data: {friend: friend, index: index}});
+		const friends = axios.put(friendsEndpoint, {update: friend, index: index});
 		return {
 			type: UPDATE_FRIEND,
 			payload: friends,
